@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "learnjs",
+    "removeComments": true,
+    "watch": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["learnts/**/*"],
+  "exclude": ["css", "fonts", "js", "mjs", "learnjs", "ts"]
+}
