@@ -69,3 +69,22 @@ function showInfo() {
     console.log("show info function");
 }
 showInfo();
+let typeAssertion;
+typeAssertion = "hello";
+console.log("typeAssertion", typeAssertion.length);
+let courseObj;
+courseObj = {
+    name: "es6",
+    time: 5,
+};
+console.log("courseObj: ", courseObj);
+let courseObj1 = {
+    name: "php",
+    time: 4,
+    free: true,
+};
+console.log("courseObj1: ", courseObj1);
+let course = ["es6", "typescript"];
+console.log("course", course);
+let courseItem = ["php", "javascript"];
+console.log("courseItem", courseItem);

@@ -105,3 +105,37 @@ function showInfo(): void {
   console.log("show info function");
 }
 showInfo();
+
+// type assertions
+let typeAssertion: unknown;
+typeAssertion = "hello";
+// must to about type string before get length use keyword as
+console.log("typeAssertion", (typeAssertion as string).length);
+
+// interface object
+interface CourseInterface {
+  name: string;
+  time: number;
+  free?: boolean;
+}
+let courseObj: CourseInterface;
+courseObj = {
+  name: "es6",
+  time: 5,
+};
+console.log("courseObj: ", courseObj);
+let courseObj1: CourseInterface = {
+  name: "php",
+  time: 4,
+  free: true,
+};
+console.log("courseObj1: ", courseObj1);
+
+// interface array
+let course: string[] = ["es6", "typescript"];
+console.log("course", course);
+interface CourseList {
+  [index: number]: string;
+}
+let courseItem: CourseList = ["php", "javascript"];
+console.log("courseItem", courseItem);
