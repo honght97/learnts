@@ -52,3 +52,20 @@ let printCar = (pt) => {
     console.log(`printCar extend CarInterface: ${pt.year} - ${pt.type} - ${pt.model}- ${pt.run}`);
 };
 printCar({ year: 2023, type: "type", model: "model", run: false });
+const printStatusCode = (code) => {
+    console.log(`printStatusCode: ${typeof code}`, code);
+};
+printStatusCode(404);
+printStatusCode("404");
+printStatusCode(true);
+let typeAny;
+typeAny = 4;
+typeAny = "any";
+console.log("typeAny:", typeAny);
+let typeAnyArr;
+typeAnyArr = [1, 2, "2te", true];
+console.log("typeAnyArr: ", typeAnyArr);
+function showInfo() {
+    console.log("show info function");
+}
+showInfo();

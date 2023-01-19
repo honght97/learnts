@@ -82,3 +82,26 @@ let printCar = (pt: CarPr) => {
   );
 };
 printCar({ year: 2023, type: "type", model: "model", run: false });
+
+// union(or) type
+const printStatusCode = (code: string | number | boolean) => {
+  console.log(`printStatusCode: ${typeof code}`, code);
+};
+printStatusCode(404);
+printStatusCode("404");
+printStatusCode(true);
+
+// any
+let typeAny: any;
+typeAny = 4;
+typeAny = "any";
+console.log("typeAny:", typeAny);
+let typeAnyArr: any[];
+typeAnyArr = [1, 2, "2te", true];
+console.log("typeAnyArr: ", typeAnyArr);
+
+// void
+function showInfo(): void {
+  console.log("show info function");
+}
+showInfo();

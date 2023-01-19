@@ -56,3 +56,8 @@
   - chỉ sử dụng với **object**
 - differences **Interfaces** with **types aliases**
   - aliases không thể mở rộng or thêm mới thuộc tính
+- union types
+  - used when a value can be more a single type
+- void
+  - quyết định kiểu trả về của 1 function nào đó
+  - không trả về một kiểu dữ liệu nào đó
