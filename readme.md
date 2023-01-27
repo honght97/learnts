@@ -98,3 +98,8 @@
   - Implements: Dùng cho interface, bắt buộc phải tuân thủ theo 1 chuẩn nào đó
 
 ## 5. Generic
+
+- allow creating 'type variables' which can be used to create classes, function and type aliases that don't need to explicitly(rõ ràng) define the types that they use.
+- it easier to write reusable code
+
+## 6. Module & Namespace
