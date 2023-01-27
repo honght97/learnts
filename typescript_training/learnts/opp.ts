@@ -29,17 +29,17 @@ interface TaskInterface {
   state?: TaskState;
 }
 class TaskService {
-  static username: string = "john";
-  tasks: TaskInterface[];
+  static username: string = "peter";
+  static tasks: TaskInterface[];
   constructor(tasks: TaskInterface[]) {
-    this.tasks = tasks;
+    TaskService.tasks = tasks;
   }
   getItems() {
-    return this.tasks;
+    return TaskService.tasks;
   }
-  static showItemsInfo() {
-    for (let task of this.tasks) {
-      console.log(task);
+  static showItemsInfo(): void {
+    for (let task of TaskService.tasks) {
+      console.log(`${TaskService.username} - ${task.name}`);
     }
   }
 }
@@ -49,5 +49,45 @@ let tasks: TaskInterface[] = [
 ];
 let taskServiceObj = new TaskService(tasks);
 console.log(taskServiceObj.getItems());
-console.log(TaskService.username);
-console.log("....", taskServiceObj.showItemsInfo());
+console.log("TaskService.username", TaskService.username);
+TaskService.showItemsInfo();
+
+// inheritance
+class Course {
+  public id: string;
+  private name: string;
+  protected price: number;
+  constructor(id: string, name: string, price: number) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+  }
+  showCourseInfo(): void {
+    console.log(`${this.id} - ${this.name} - ${this.price}`);
+  }
+}
+
+class CourseMobile extends Course {
+  author: string;
+  constructor(id: string, name: string, price: number, author: string) {
+    super(id, name, price);
+    this.author = author;
+  }
+  showCourseInfo(): void {
+    super.showCourseInfo();
+    console.log(`${this.author}`);
+  }
+  checkPro() {
+    // truy cập trong class con
+    console.log("this.id:", this.id);
+    console.log("this.price:", this.price);
+  }
+}
+let courseObj01 = new Course("CO01", "Programming", 23);
+courseObj01.showCourseInfo();
+let courseObjMobile = new CourseMobile("CO01", "Programming", 23, "sen");
+courseObjMobile.showCourseInfo();
+courseObjMobile.checkPro();
+
+// truy cập bên ngoài
+console.log("courseObj01.id:", courseObj01.id);
