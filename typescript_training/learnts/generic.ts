@@ -4,10 +4,10 @@ function showNumberInfo(x: number): number {
 function showStringInfo(x: string): string {
   return x;
 }
-function showInfo<T>(x: T) {
+function showInfo01<T>(x: T) {
   return x;
 }
-showInfo<string>("123");
+showInfo01<string>("123");
 class StudyGeneric {
   static printArray<T>(params: T[]): void {
     console.log(params);

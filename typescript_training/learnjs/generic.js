@@ -5,10 +5,10 @@ function showNumberInfo(x) {
 function showStringInfo(x) {
     return x;
 }
-function showInfo(x) {
+function showInfo01(x) {
     return x;
 }
-showInfo("123");
+showInfo01("123");
 class StudyGeneric {
     static printArray(params) {
         console.log(params);
