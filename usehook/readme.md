@@ -56,7 +56,14 @@
 ## useMemo()
 
 - sử dụng để tối ưu hóa hiệu suất của ứng dụng bằng cách lưu trữ giá trị tính toán trước đó vào bộ nhớ cache => nếu k có gì thay đổi => trả về giá trị đã lưu trước đó.
+- nhận vào 2 tham số
+  - tham số thứ nhất: là 1 function
+  - tham số 2: 1 array dependency
 
 ## cache
 
 - 1 bộ nhớ tạm thời, sử dụng để lưu trữ các dữ liệu thường xuyên truy cập để tăng tốc độ truy cập và giảm tải các thiết bị lưu trữ chính.
+
+## nguyên lý hoạt động của reactjs
+
+- khi một props or 1 state thay đổi => thì component sẽ được re-render =>chú ý hiệu năng của chương trình
