@@ -69,6 +69,7 @@
 
 - khi một props or 1 state thay đổi => thì component sẽ được re-render =>chú ý hiệu năng của chương trình
 
+<<<<<<< HEAD
 ## useCallback()
 
 - cũng nhận vào 2 tham số
@@ -139,3 +140,30 @@
 - => không thể check xem function đó vi phạm quy tắc gì trong hook
 
 https://reqres.in/api/users
+=======
+## useId
+- giải quyết vấn đề trùng id khi re-use lại một component
+## useTransition()
+## useDeferredValue()
+
+## context api => useContext() 
+- context api là một tính năng cho phéo truyền dữ liệu qua các components của ứng dụng mà không cần phải truyền dữ liệu qua từng components
+- thay vì sử dụng props để truyển dữ liệu => các child components => context api cho phép tạo 1 global state or các function có thể truy cập từ bất cứ component nào trong ứng dụng.
+- để sử dụng context trong react có 3 bước 
+  - bước 1: tạo context
+  - bước 2: quyết định xem context vừa tạo được dùng ở đâu bằng cách bọc <[Tên Context].Provider> bên ngoài => tất cả components con đều có thể lấy dữ liệu từ context
+  - bước 3: sử dụng dữ liệu từ Context hay con gọi là comsumer(tiêu thụ):
+    - có 2 cách để lấy dữ liệu
+      - useContext
+      - sử dụng <[tên context].Comsumer> => áp dụng với class components
+## so sánh context api và redux
+- context:
+  - dễ học
+  - là 1 api được tích hợp sẵn trong react library
+  - phù hợp với những dự án nhỏ
+- redux: 
+  - khó học hơn, nắm nhiều khái niệm và cú pháp 
+  - làm code có tính tổ chức và dễ maintain hơn
+  - là 1 third library nên sẽ làm tăng bundle size
+  - phù hợp với mọi loại dự án.
+>>>>>>> 74d887b15ccc78075a269f06f3f1a0bb6eb1c0bb
