@@ -59,6 +59,7 @@
 - nhận vào 2 tham số
   - tham số thứ nhất: là 1 function
   - tham số 2: 1 array dependency
+- cần chú ý sử dụng vì khi dùng useMemo() sẽ mất một vùng nhớ nhất định để có thể ghi nhớ được function => không nên lạm dụng
 
 ## cache
 
@@ -67,3 +68,74 @@
 ## nguyên lý hoạt động của reactjs
 
 - khi một props or 1 state thay đổi => thì component sẽ được re-render =>chú ý hiệu năng của chương trình
+
+## useCallback()
+
+- cũng nhận vào 2 tham số
+  - tham số thứ nhất 1 function
+  - tham số thứ hai 1 array dependency
+- sử dụng để tránh các useEffect() ở các component child re-render
+- cũng như useMemo() => cũng mất 1 vùng nhớ nhất định để ghi nhớ các function => tránh lạm dụng
+
+## tham trị và tham chiếu
+
+- tham trị: number, string, boolean, null, undefined, symbol
+  `let a = 3; let b = 3;  so sánh a === b => true`
+- tham chiếu: object, array, function
+  `let c = () => {}; let d = ()=> {}; so sánh c === d => false`
+  - biến c và d => trỏ đến địa chỉ khác khau
+
+## React.memo() vs React.useMemo
+
+- React.useMemo: là react hooks
+- React.memo(): là higher-order component => nhận vào 1 component => trả về 1 component khác
+  - chỉ hoạt động tốt khi truyền các props là string, boolean, number
+  - nhận 2 vào 2 tham số:
+    - tham số thứ nhất 1 function
+    - tham số thứ hai 1 function dùng để custom => việc so sánh các props nhận vào
+      - function này nhận vào 2 tham số prevProps và nextProps
+      - trả về true nếu k muốn re-render lại
+  - mặc định shallow comparison(so sánh nông)
+  - cũng giống như useCallback và useMemo => sẽ tốn 1 bộ nhớ nhất định để ghi nhớ => tránh lạm dụng
+  - thường dùng với các component child hay bị re-render mà các props không bị thay đổi.
+    \*\* cách không phải dùng tới React.memo()
+    \*\*có thể phân tách thành các component child để tránh re-render 1 component child mà không có props thay đổi
+    \*\* cách 2 sử dụng kĩ thuật props là children để tránh phải dùng React.memo()
+    ``
+- lưu ý : trong react 1 component re-render => thì tất cả các component child cũng re-render
+
+## useRef()
+
+- có 2 ứng dựng của useRef phổ biến
+  - giúp có thể lưu trữ lại 1 tham chiếu
+  - sử dụng để truy xuất tới các thành phần DOM
+- useRef() => trả về 1 object => điều khác biệt với object thuần
+- => object của useRef() => tham chiếu đến địa chỉ duy nhất => khi mà re-render component => không bị khởi tạo lại 1 object mới
+- useRef và useState đều có thể giữ được giá trị trước đó đã lưu
+- useState => sẽ re-render nếu có sự thay đổi của state
+- useRef => không gây ra re-render
+- sử dụng useState => khi muốn thay đổi UI
+- sử dụng useRef => để tránh khỏi sự re-render mà không thay đổi UI
+- useRef => giải quyết vấn đề stale closure
+
+## useReducer()
+
+- sử dụng để quản lý các state phức tạp của 1 component
+- ACTION: object, string => 'ADD_ITEM'
+- VIEW: phần UI => click lên 1 button => dispatch(ACTION) === dispatch('ADD_ITEM')
+- REDUCER: là 1 function có 2 tham số
+  `(state, action)=> {
+  switch(action) {
+  case 'ADD_ITEM':
+    return state = state + 1;
+}
+}`
+- useReducer(reducer, initialValue)
+- dispatch là 1 function => truyền đi action nào đó
+
+## custom hook
+
+- là 1 function => bắt đầu bằng use => nếu không bắt đầu bằng use => react sẽ không hiểu
+- => không thể check xem function đó vi phạm quy tắc gì trong hook
+
+https://reqres.in/api/users
