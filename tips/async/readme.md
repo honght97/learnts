@@ -36,3 +36,7 @@
   - khi có kết quả trả về từ api => thành công thì có trạng thái resolve => có nghĩa là đã hoàn thành xong promises này
   - khi có kết quả trả về từ api => thất bại thì có trạng thái reject => promises không thực hiện thành công
 - khi khởi tạo 1 promise => nhận vào 1 function => function này nhận vào 2 tham số resolve và reject
+
+## async await
+
+- giúp xử lý 1 đoạn code bất đồng bộ mà trông như đồng bộ => dễ dàng đọc và hiểu hơn

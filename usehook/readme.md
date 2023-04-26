@@ -140,7 +140,6 @@
 - => không thể check xem function đó vi phạm quy tắc gì trong hook
 
 https://reqres.in/api/users
-=======
 ## useId
 - giải quyết vấn đề trùng id khi re-use lại một component
 ## useTransition()
@@ -166,4 +165,3 @@ https://reqres.in/api/users
   - làm code có tính tổ chức và dễ maintain hơn
   - là 1 third library nên sẽ làm tăng bundle size
   - phù hợp với mọi loại dự án.
->>>>>>> 74d887b15ccc78075a269f06f3f1a0bb6eb1c0bb
